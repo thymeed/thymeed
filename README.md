@@ -16,9 +16,14 @@
 
 ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Latest release v1.4.1](https://img.shields.io/badge/release-v1.4.1-blue) ![CI: Windows, macOS, Linux](https://img.shields.io/badge/CI-Windows%20%7C%20macOS%20%7C%20Linux-informational)
 
+**[context-keeper](https://github.com/thymeed/context-keeper)** - local-first memory manager for AI chats. You save facts, decisions, preferences, snippets and file notes per project, then copy the ones you pick as paste-ready Markdown. Data stays in your browser's IndexedDB, with no backend, account or analytics. It is an installable offline PWA with JSON and Markdown export and import, built with React 19, TypeScript and Vite. Tests cover the core logic, the main UI flows and the service worker, with CI on Ubuntu and a tagged [v1.0.0](https://github.com/thymeed/context-keeper/releases/tag/v1.0.0). [Live app](https://context-keeper.thymeed.workers.dev).
+
+![context-keeper](docs/context-keeper.png)
+
+![License MIT](https://img.shields.io/badge/license-MIT-green) ![Latest release v1.0.0](https://img.shields.io/badge/release-v1.0.0-blue) ![CI: Ubuntu](https://img.shields.io/badge/CI-Ubuntu-informational)
+
 **FocusPet** *(private, demo on request)* - Tauri 2 + Rust Windows companion. Local LLM chat through Ollama, Win32 window and screen sensing, and network access behind a capability gate that is off by default. Rust tests, Node and PowerShell verification scripts, Windows CI.
 
-**context-keeper** *(private, demo on request)* - local-first memory manager for AI chats. React, TypeScript, Vite. Data stays in the browser, with tests and CI.
 
 ### Usage, from my own API dashboard (DeepSeek)
 - Last 30 days (09/16 to 10/16): about **2.68 billion tokens, 10,299 requests, \$28.82**, roughly \$0.01 per million tokens.
