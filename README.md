@@ -33,6 +33,7 @@ A local-first memory manager for your AI chats. It needs no account, and your da
 ## Research
 
 - **[ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization)**: why 8-bit rounding of Mamba-2's recurrent state nearly doubles perplexity, by decay rate.
+
   ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Experiments, two small models](https://img.shields.io/badge/type-experiments-informational)
 - **[replication-criterion](https://github.com/thymeed/replication-criterion)**: a pre-registered feasibility analysis of machine self-replication.
   ![License CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey) ![Study, no experiment](https://img.shields.io/badge/type-study-informational)
