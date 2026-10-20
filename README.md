@@ -1,8 +1,14 @@
 # Hi, I'm Thymeed
 
-**Desktop engineer · Rust / Tauri · local-first, privacy-first apps**
+**Software Developer · AI tools, agent workflows and evals · local-first apps**
 
-I design, review and ship desktop and web apps built with AI coding agents. Agents work in fixed roles, and nothing merges without green CI on every platform and my review.
+I design, review and ship desktop and web apps built with AI coding agents. Each agent has a fixed role: Sonnet directs and plans, Haiku implements, researches and explores, and Opus reviews and advises. When Opus finds a problem, the work goes back to Haiku and gets reviewed again. Nothing merges without green CI on every platform and my final review.
+
+---
+
+## Open-source contributions
+- [cubrid-mcp-server #369](https://github.com/cubrid-lab/cubrid-mcp-server/pull/369): added a full truth-table test for `parse_bool` (merged)
+- [cubrid-mcp-server #374](https://github.com/cubrid-lab/cubrid-mcp-server/pull/374): pinned the rule that named connections don't inherit default settings, with a mutation check (merged)
 
 ---
 
@@ -44,3 +50,5 @@ A local-first memory manager for your AI chats. It needs no account, and your da
 
 Rust · TypeScript · JavaScript/Node · Python
 Tauri 2 · Electron · Win32 · React · Vite · GitHub Actions
+
+AI tools: Claude Code · Cursor · Ollama · MCP · pytest
