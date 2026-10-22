@@ -2,7 +2,8 @@
 
 **Software Developer · AI tools, agent workflows and evals · local-first apps**
 
-I design, review and ship desktop and web apps built with AI coding agents. Each agent has a fixed role: Sonnet directs and plans, Haiku implements, researches and explores, and Opus reviews and advises. When Opus finds a problem, the work goes back to Haiku and gets reviewed again. Nothing merges without green CI on every platform and my final review.
+My development workflow utilizes an automated, multi-agent LLM pipeline to design, test, and ship desktop and web applications. I delegate tasks based on model specialization: Sonnet for high-level planning, Haiku for rapid implementation and repository exploration, and Opus for rigorous code review. Failures detected by the review agent automatically trigger an engineering loop back to the implementation layer. The final gate requires a green multi-platform CI matrix and a comprehensive manual code review.
+
 
 ---
 
