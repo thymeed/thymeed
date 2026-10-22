@@ -2,8 +2,9 @@
 
 **Software Developer · AI tools, agent workflows and evals · local-first apps**
 
-My development workflow utilizes an automated, multi-agent LLM pipeline to design, test, and ship desktop and web applications. I delegate tasks based on model specialization: Sonnet for high-level planning, Haiku for rapid implementation and repository exploration, and Opus for rigorous code review. Failures detected by the review agent automatically trigger an engineering loop back to the implementation layer. The final gate requires a green multi-platform CI matrix and a comprehensive manual code review.
+I build with a multi-agent Claude Code workflow. A Sonnet session plans each change and splits it into small units. Haiku workers make the edits, and a stronger model (Sonnet or Opus) reviews every PR. Anything the review finds goes back to a worker before the PR opens. Nothing merges until CI is green and I've tested it by hand.
 
+Real numbers from one run: Squirrow v1.1.0 shipped as 7 PRs in about 2.5 hours, using 43.8M tokens (97.3% cache reads), at an estimated $6.81 at list price, with 22 review findings fixed before merge. **[Full log →](https://github.com/thymeed/Squirrow/blob/main/docs/orchestration-log.md)**
 
 ---
 
@@ -17,6 +18,9 @@ My development workflow utilizes an automated, multi-agent LLM pipeline to desig
 
 ### FocusPet · Tauri 2 + Rust · Windows
 A desktop companion with local LLM chat through Ollama, so conversations never leave your machine. Network access is off by default.
+
+**Evals:** a seeded harness (gemma3:4b, 15 prompts × 3 seeds) that scores tool-call replies with a unit-aware checker and records the model digest and git SHA with every run. Adding tool calls took the score from 24/45 to 42/45. Every behavior change is gated on before-and-after tables, and known failures are logged rather than tuned away.
+
 *Private repo. Demo on request.*
 
 ### [agent-workshop](https://github.com/thymeed/agent-workshop) · Electron + Node
@@ -29,9 +33,9 @@ A desktop dashboard that shows how a multi-agent coding session routes work acro
 
 ### [Squirrow](https://github.com/thymeed/Squirrow) · React 19 + TypeScript
 A local-first memory manager for your AI chats. It needs no account, and your data stays in your browser. It installs as an offline app.
-**[Try it live](https://squirrow.thymeed.workers.dev)**
+**[Try it live](https://squirrow.thymeed.workers.dev)** · **[How it was built →](https://github.com/thymeed/Squirrow/blob/main/docs/orchestration-log.md)**
 
-![License MIT](https://img.shields.io/badge/license-MIT-green) ![Latest release v1.0.0](https://img.shields.io/badge/release-v1.0.0-blue) ![CI: Ubuntu](https://img.shields.io/badge/CI-Ubuntu-informational)
+![License MIT](https://img.shields.io/badge/license-MIT-green) ![Latest release v1.1.0](https://img.shields.io/badge/release-v1.1.0-blue) ![CI: Ubuntu](https://img.shields.io/badge/CI-Ubuntu-informational)
 
 ![Squirrow](docs/og.png)
 
