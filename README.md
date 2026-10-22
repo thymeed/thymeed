@@ -26,13 +26,13 @@ A desktop dashboard that shows how a multi-agent coding session routes work acro
 
 ![Agent Workshop](https://raw.githubusercontent.com/thymeed/agent-workshop/master/docs/preview.png)
 
-### [context-keeper](https://github.com/thymeed/context-keeper) · React 19 + TypeScript
+### [Squirrow](https://github.com/thymeed/Squirrow) · React 19 + TypeScript
 A local-first memory manager for your AI chats. It needs no account, and your data stays in your browser. It installs as an offline app.
-**[Try it live →](https://context-keeper.thymeed.workers.dev)**
+**[Try it live](https://squirrow.thymeed.workers.dev)**
 
 ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Latest release v1.0.0](https://img.shields.io/badge/release-v1.0.0-blue) ![CI: Ubuntu](https://img.shields.io/badge/CI-Ubuntu-informational)
 
-![context-keeper](docs/context-keeper.png)
+![Squirrow](docs/og.png)
 
 ---
 
