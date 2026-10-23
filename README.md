@@ -45,7 +45,7 @@ A local-first memory manager for your AI chats. It needs no account, and your da
 
 ## Research
 
-- **[ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization)**: how rounding the recurrent state of Mamba-2 (130M and 370M) hurts accuracy, broken down by how fast each head forgets. Every experiment is pre-registered in the log before it runs.
+- **[ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization)**: how rounding the recurrent state of Mamba-2 (130M and 370M) hurts accuracy, broken down by how fast each head forgets. Every experiment is pre-registered in the log before it runs. *Private repo. Demo on request.*
   ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Experiments, two small models](https://img.shields.io/badge/type-experiments-informational)
 - **[replication-criterion](https://github.com/thymeed/replication-criterion)**: a pre-registered feasibility analysis of machine self-replication.
   ![License CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey) ![Study, no experiment](https://img.shields.io/badge/type-study-informational)
