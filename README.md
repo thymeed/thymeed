@@ -46,11 +46,6 @@ A local-first memory manager for your AI chats. It needs no account, and your da
 ## Research
 
 - **[ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization)**: how rounding the recurrent state of Mamba-2 (130M and 370M) hurts accuracy, broken down by how fast each head forgets. Every experiment is pre-registered in the log before it runs.
-  - **The grid matters more than the bit width at 8 bits.** Symmetric 8-bit rounding raises WikiText-2 perplexity from 20.3 to 38.7. An asymmetric grid costs only +0.2 to +0.8.
-  - **The damage sits in the middle-memory heads** (decay 0.9 to 0.99), not the slowest ones. Rounding only those heads gives +14.0 ppl [+9.8, +19.3] on 24 windows, and it replicates on 370M (14.3 → 30.4).
-  - **The direction of the error matters, not its size.** The same error magnitudes with random signs cost +0.1.
-  - **Reversals are necessary but not sufficient.** Correcting only the entries where rounding moves against the input removes about 98% of the damage, but that error alone reproduces under 1%.
-
   ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Experiments, two small models](https://img.shields.io/badge/type-experiments-informational)
 - **[replication-criterion](https://github.com/thymeed/replication-criterion)**: a pre-registered feasibility analysis of machine self-replication.
   ![License CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey) ![Study, no experiment](https://img.shields.io/badge/type-study-informational)
