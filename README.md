@@ -4,7 +4,9 @@
 
 I build with a multi-agent Claude Code workflow. A Sonnet session plans each change and splits it into small units. Haiku workers make the edits, and a stronger model (Sonnet or Opus) reviews every PR. Anything the review finds goes back to a worker before the PR opens. Nothing merges until CI is green and I've tested it by hand.
 
-Real numbers from one run: Squirrow v1.1.0 shipped as 7 PRs in about 2.5 hours, using 43.8M tokens (97.3% cache reads), at an estimated $6.81 at list price, with 22 review findings fixed before merge. **[Full log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md)**
+**Squirrow v1.1.0:** shipped as 7 PRs in about 2.5 hours, using 43.8M tokens (97.3% cache reads), at an estimated $6.81 at list price, with 22 review findings fixed before merge. **[Full log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md)**
+
+**FocusPet:** in one day of work, 38 subagent runs covered 12 issues in three batches. Haiku and Sonnet workers wrote the code, and Opus reviewers and advisors checked every PR before it shipped. That came to 4.07M subagent tokens and at least $9.67 at list price, with 10 "fix first" reviews resolved before shipping.
 
 ---
 
@@ -43,7 +45,11 @@ A local-first memory manager for your AI chats. It needs no account, and your da
 
 ## Research
 
-- **[ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization)**: why 8-bit rounding of Mamba-2's recurrent state nearly doubles perplexity, by decay rate.
+- **[ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization)**: how rounding the recurrent state of Mamba-2 (130M and 370M) hurts accuracy, broken down by how fast each head forgets. Every experiment is pre-registered in the log before it runs.
+  - **The grid matters more than the bit width at 8 bits.** Symmetric 8-bit rounding raises WikiText-2 perplexity from 20.3 to 38.7. An asymmetric grid costs only +0.2 to +0.8.
+  - **The damage sits in the middle-memory heads** (decay 0.9 to 0.99), not the slowest ones. Rounding only those heads gives +14.0 ppl [+9.8, +19.3] on 24 windows, and it replicates on 370M (14.3 → 30.4).
+  - **The direction of the error matters, not its size.** The same error magnitudes with random signs cost +0.1.
+  - **Reversals are necessary but not sufficient.** Correcting only the entries where rounding moves against the input removes about 98% of the damage, but that error alone reproduces under 1%.
 
   ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Experiments, two small models](https://img.shields.io/badge/type-experiments-informational)
 - **[replication-criterion](https://github.com/thymeed/replication-criterion)**: a pre-registered feasibility analysis of machine self-replication.
