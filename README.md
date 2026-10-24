@@ -2,7 +2,7 @@
 
 **Software Developer · AI tools, agent workflows and evals · local-first apps**
 
-I build with a multi-agent Claude Code workflow. The main Sonnet session leads: it plans each change, splits it into small units and asks me the product questions. Haiku workers make the edits, and an Opus reviewer blocks on missing requirements, untested behavior and silent data loss. After three rejections the loop stops and the decision comes to me. Nothing merges until CI is green and I've tested it by hand. **[Agent team smoke tests →](https://github.com/thymeed/thymeed/blob/main/docs/Agent_Team_Log.md)**
+I build with a multi-agent Claude Code workflow. The main Sonnet session leads: it plans each change, splits it into small units and asks me the product questions. Haiku workers make the edits, and an Opus reviewer blocks on missing requirements, untested behavior and silent data loss. After three rejections the loop stops and the decision comes to me. Nothing merges until CI is green and I've tested it by hand. **[Agent team smoke tests →](https://github.com/thymeed/thymeed/blob/main/docs/agent-team-smoke-tests.md)**
 
 **Squirrow v1.1.0:** shipped as 7 PRs in about 2.5 hours, using 43.8M tokens (97.3% cache reads), at an estimated $6.81 at list price, with 22 review findings fixed before merge. **[Full log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-1-squirrow-v110-case-study)**
 
