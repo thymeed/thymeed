@@ -1,6 +1,6 @@
 # Orchestration log (case studies)
 
-Smoke tests of the agent team are in [Agent_Team_Log.md](Agent_Team_Log.md). Those six tests ran the planner-subagent version, not the Lead setup (the main chat plans, following `~/.claude/orchestration/Lead.md`). The first real run with the Lead setup is therefore effectively test 7: it is the first run recorded here under that setup, and nothing before it proves it.
+Smoke tests of the agent team are in [agent-team-smoke-tests.md](agent-team-smoke-tests.md). Those six tests ran the planner-subagent version, not the Lead setup (the main chat plans, following `~/.claude/orchestration/Lead.md`). The first real run with the Lead setup is therefore effectively test 7: it is the first run recorded here under that setup, and nothing before it proves it.
 
 ## Run 1: Squirrow v1.1.0 (case study)
 
