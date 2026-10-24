@@ -2,9 +2,9 @@
 
 **Software Developer · AI tools, agent workflows and evals · local-first apps**
 
-I build with a multi-agent Claude Code workflow. A Sonnet session plans each change and splits it into small units. Haiku workers make the edits, and a stronger model (Sonnet or Opus) reviews every PR. Anything the review finds goes back to a worker before the PR opens. Nothing merges until CI is green and I've tested it by hand.
+I build with a multi-agent Claude Code workflow. The main Sonnet session leads: it plans each change, splits it into small units and asks me the product questions. Haiku workers make the edits, and an Opus reviewer blocks on missing requirements, untested behavior and silent data loss. After three rejections the loop stops and the decision comes to me. Nothing merges until CI is green and I've tested it by hand. **[Agent team smoke tests →](https://github.com/thymeed/thymeed/blob/main/docs/Agent_Team_Log.md)**
 
-**Squirrow v1.1.0:** shipped as 7 PRs in about 2.5 hours, using 43.8M tokens (97.3% cache reads), at an estimated $6.81 at list price, with 22 review findings fixed before merge. **[Full log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md)**
+**Squirrow v1.1.0:** shipped as 7 PRs in about 2.5 hours, using 43.8M tokens (97.3% cache reads), at an estimated $6.81 at list price, with 22 review findings fixed before merge. **[Full log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-1-squirrow-v110-case-study)**
 
 **FocusPet:** in one day of work, 38 subagent runs covered 12 issues in three batches. Haiku and Sonnet workers wrote the code, and Opus reviewers and advisors checked every PR before it shipped. That came to 4.07M subagent tokens and at least $9.67 at list price, with 10 "fix first" reviews resolved before shipping.
 
@@ -22,7 +22,7 @@ I build with a multi-agent Claude Code workflow. A Sonnet session plans each cha
 ### FocusPet · Tauri 2 + Rust · Windows
 A desktop companion with local LLM chat through Ollama, so conversations never leave your machine. Network access is off by default.
 
-**Evals:** a seeded harness (gemma3:4b, 15 prompts × 3 seeds) that scores tool-call replies with a unit-aware checker and records the model digest and git SHA with every run. Adding tool calls took the score from 24/45 to 42/45. Every behavior change is gated on before-and-after tables, and known failures are logged rather than tuned away.
+**Evals:** a seeded harness (gemma3:4b, 15 prompts × 3 seeds) that scores tool-call replies with a unit-aware checker and records the model digest and git SHA with every run. Adding tool calls took the score from 24/45 to 42/45. For a bug where Bit invented numbers about his own mood (#34), a seeded scenario with stored notes and chat history exposed a memory feedback loop the clean eval missed (42/95 seeded vs 89/95 clean on main). I shipped a read-only note filter instead of a higher-scoring version that deleted users' real notes. Every behavior change is gated on before-and-after tables, and known failures are logged rather than tuned away. **[Case study →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-5-focuspet-34-state-number-rule-2026-10-24)**
 
 *Private repo. Demo on request.*
 
@@ -36,7 +36,7 @@ A desktop dashboard that shows how a multi-agent coding session routes work acro
 
 ### [Squirrow](https://github.com/thymeed/Squirrow) · React 19 + TypeScript
 A local-first memory manager for your AI chats. It needs no account, and your data stays in your browser. It installs as an offline app.
-**[Try it live](https://squirrow.thymeed.workers.dev)** · **[How it was built →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md)**
+**[Try it live](https://squirrow.thymeed.workers.dev)** · **[How it was built →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-1-squirrow-v110-case-study)**
 
 ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Latest release v1.1.0](https://img.shields.io/badge/release-v1.1.0-blue) ![CI: Ubuntu](https://img.shields.io/badge/CI-Ubuntu-informational)
 
