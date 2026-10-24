@@ -13,6 +13,7 @@ I build with a multi-agent Claude Code workflow. A Sonnet session plans each cha
 ## Open-source contributions
 - [cubrid-mcp-server #369](https://github.com/cubrid-lab/cubrid-mcp-server/pull/369): added a full truth-table test for `parse_bool` (merged)
 - [cubrid-mcp-server #374](https://github.com/cubrid-lab/cubrid-mcp-server/pull/374): pinned the rule that named connections don't inherit default settings, with a mutation check (merged)
+- [repowise #4350](https://github.com/repowise-dev/repowise/pull/4350): stopped the repo timeout test flaking on slow runners (merged)
 
 ---
 
