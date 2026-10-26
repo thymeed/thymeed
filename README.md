@@ -11,10 +11,11 @@ I build with a multi-agent Claude Code workflow. The main Sonnet session leads: 
 ---
 
 ## Open-source contributions
+- [goose #12993](https://github.com/aaif-goose/goose/pull/12993): fixed custom providers losing image support when renamed, by looking up vision through their catalog ID, with a mock-server test for each override case (merged)
 - [cubrid-mcp-server #369](https://github.com/cubrid-lab/cubrid-mcp-server/pull/369): added a full truth-table test for `parse_bool` (merged)
 - [cubrid-mcp-server #374](https://github.com/cubrid-lab/cubrid-mcp-server/pull/374): pinned the rule that named connections don't inherit default settings, with a mutation check (merged)
 - [repowise #4350](https://github.com/repowise-dev/repowise/pull/4350): stopped the repo timeout test flaking on slow runners (merged)
-- [octofs #16](https://github.com/Muvon/octofs/pull/16): added the first unit tests for `request_ctx` (hint dedupe, scoping, view cache), my first Rust PR (merged)
+- [octofs #16](https://github.com/Muvon/octofs/pull/16): added the first unit tests for `request_ctx` (hint dedupe, scoping, view cache), my first merged Rust PR (merged)
 
 ---
 
