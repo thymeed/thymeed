@@ -2,11 +2,13 @@
 
 **Software Developer · AI tools, agent workflows and evals · local-first apps**
 
-I build with a multi-agent Claude Code workflow. The main Sonnet session leads: it plans each change, splits it into small units and asks me the product questions. Haiku workers make the edits, and an Opus reviewer blocks on missing requirements, untested behavior and silent data loss. After three rejections the loop stops and the decision comes to me. Nothing merges until CI is green and I've tested it by hand. **[Agent team smoke tests →](https://github.com/thymeed/thymeed/blob/main/docs/agent-team-smoke-tests.md)**
+I build with a multi-agent Claude Code workflow. The main Sonnet session leads: it asks me the product and edge-case questions first, then plans each change and splits it into small units. Haiku workers make the edits, and an Opus reviewer blocks on missing requirements, untested behavior and silent data loss. I choose which review findings get fixed. After three rejections, or five review rounds on one unit, the loop stops and the decision comes to me. Nothing merges until CI is green and I've tested it by hand. **[Agent team smoke tests →](https://github.com/thymeed/thymeed/blob/main/docs/agent-team-smoke-tests.md)** · **[Cost log →](https://github.com/thymeed/thymeed/blob/main/docs/cost.md)**
 
 **Squirrow v1.1.0:** shipped as 7 PRs in about 2.5 hours, using 43.8M tokens (97.3% cache reads), at an estimated $6.81 at list price, with 22 review findings fixed before merge. **[Full log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-1-squirrow-v110-case-study)**
 
-**FocusPet:** in one day of work, 38 subagent runs covered 12 issues in three batches. Haiku and Sonnet workers wrote the code, and Opus reviewers and advisors checked every PR before it shipped. That came to 4.07M subagent tokens and at least $9.67 at list price, with 10 "fix first" reviews resolved before shipping.
+**Squirrow, five features plus four follow-ups:** 9 PRs merged across 19 review rounds, using 2,271,207 measured subagent tokens (38 of 40 agent reports measured; the two stopped workers and the lead are "not measured"). **[Full log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-7-squirrow-five-features-stacked-prs-2026-10-27-to-10-28-merged-as-60-61-64-65-66)**
+
+**FocusPet:** in one day of work, 38 subagent runs covered 12 issues in three batches. Haiku and Sonnet workers wrote the code, and Opus reviewers and advisors checked every PR before it shipped. That came to 4.07M measured subagent tokens (36 of the 38 runs reported a count) and at least $9.67 at list price, with 10 "fix first" reviews resolved before shipping.
 
 ---
 
@@ -39,8 +41,6 @@ A desktop dashboard that shows how a multi-agent coding session routes work acro
 
 ### [Squirrow](https://github.com/thymeed/Squirrow) · React 19 + TypeScript
 A local-first memory manager for your AI chats. It needs no account, and your data stays in your browser. It installs as an offline app.
-
-**Run 7:** five features (kind filter, backup nudge, real token counts, saved picks, chat import) and four follow-ups shipped as reviewed PRs, using 2.27M subagent tokens across 19 review rounds
 
 **[Try it live](https://squirrow.thymeed.workers.dev)** · **[How it was built →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-7-squirrow-five-features-stacked-prs-2026-10-27-to-10-28-merged-as-60-61-64-65-66)**
 
