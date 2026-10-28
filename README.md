@@ -40,9 +40,9 @@ A desktop dashboard that shows how a multi-agent coding session routes work acro
 ### [Squirrow](https://github.com/thymeed/Squirrow) · React 19 + TypeScript
 A local-first memory manager for your AI chats. It needs no account, and your data stays in your browser. It installs as an offline app.
 
-**#run-7-squirrow-five-features-stacked-prs-2026-10-27-to-10-28-merged-as-60-61-64-65-66:** five features (kind filter, backup nudge, real token counts, saved picks, chat import) and four follow-ups shipped as reviewed PRs, using 2.27M subagent tokens across 19 review rounds.
+**Run 7:** five features (kind filter, backup nudge, real token counts, saved picks, chat import) and four follow-ups shipped as reviewed PRs, using 2.27M subagent tokens across 19 review rounds
 
-**[Try it live](https://squirrow.thymeed.workers.dev)** · **[How it was built →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-1-squirrow-v110-case-study)** · **[Run 7 log →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-7)**
+**[Try it live](https://squirrow.thymeed.workers.dev)** · **[How it was built →](https://github.com/thymeed/thymeed/blob/main/docs/Orchestration_log.md#run-7-squirrow-five-features-stacked-prs-2026-10-27-to-10-28-merged-as-60-61-64-65-66)**
 
 ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Latest release v1.1.0](https://img.shields.io/badge/release-v1.1.0-blue) ![CI: Ubuntu](https://img.shields.io/badge/CI-Ubuntu-informational)
 
