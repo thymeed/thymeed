@@ -1,6 +1,6 @@
 # Orchestration log (case studies)
 
-Smoke tests of the agent team are in [Agent_Team_Log.md](Agent_Team_Log.md). Those six tests ran the planner-subagent version, not the Lead setup (the main chat plans, following `~/.claude/orchestration/Lead.md`). The first real run with the Lead setup is therefore effectively test 7: it is the first run recorded here under that setup, and nothing before it proves it.
+Smoke tests of the agent team are in [agent-team-smoke-tests.md](agent-team-smoke-tests.md). Those six tests ran the planner-subagent version, not the Lead setup (the main chat plans, following `~/.claude/orchestration/Lead.md`). The first real run with the Lead setup is therefore effectively test 7: it is the first run recorded here under that setup, and nothing before it proves it.
 
 ## Run 1: Squirrow v1.1.0 (case study)
 
@@ -215,7 +215,7 @@ Unit stubs, one line per merged unit, then the full entry below.
 
 ### Run 7 summary: five features shipped as #60, #61, #64, #65, #66 (issues #55 to #59, all closed)
 
-Lead (sonnet). Stacked branches, bottom-up merges by the owner. Measured subagent tokens, models from the agent files (worker haiku, reviewer opus). Details per agent are in `~/.claude/cost.md` under "Squirrow run 2".
+Lead (sonnet). Stacked branches, bottom-up merges by the owner. Measured subagent tokens, models from the agent files (worker haiku, reviewer opus). Details per agent are in `cost.md` under "Squirrow run 2".
 
 **What shipped:**
 - #55 kind filter chips next to search; chips reset per project.
@@ -224,7 +224,7 @@ Lead (sonnet). Stacked branches, bottom-up merges by the owner. Measured subagen
 - #58 saved picks per project, in Export and Import JSON, with an IndexedDB v2 upgrade, a message when an older tab blocks the upgrade, and an all-or-nothing `replaceAll`.
 - #59 Import from chat: headings, bullets, paragraphs and code fences split into editable draft entries with keyword-guessed kinds. No AI, no network.
 
-**Numbers (measured subagent tokens, from the entries above and `~/.claude/cost.md`):**
+**Numbers (measured subagent tokens, from the entries above and `cost.md`):**
 
 | Unit | PR | Tokens | Review rounds | Result |
 |---|---|---|---|---|
@@ -260,7 +260,7 @@ Lessons:
 
 ### Run 7 follow-ups summary: #67, #68, #71 and #63 shipped as #69, #70, #72 and #73 (all issues closed)
 
-Lead (sonnet). Measured subagent tokens, models from the agent files (worker haiku, reviewer opus). Per-agent rows are in `~/.claude/cost.md` under "Squirrow run 2 follow-ups".
+Lead (sonnet). Measured subagent tokens, models from the agent files (worker haiku, reviewer opus). Per-agent rows are in `cost.md` under "Squirrow run 2 follow-ups".
 
 | Unit | PR | Tokens | Review rounds | Result |
 |---|---|---|---|---|
@@ -288,3 +288,17 @@ Lessons:
 - **Test gaps were the usual finding in the follow-ups.** Three of the four follow-ups were rejected once for behaviors that no test would have caught breaking. Asking the worker up front for a mutation proof per new test, as the briefs did from #68 on, made the second round short.
 - **Owner-supplied issue text works as the brief.** #67, #68 and #71 arrived as pasted text; filing each exactly as written, then briefing the worker with the text verbatim plus the gaps the Lead filled (sentence rules, nested bullets), kept the owner's wording as the contract.
 - **Small inline edits by the Lead stayed cheap and safe:** one stale test expectation, two doc comments, and rebases; production code still went through workers.
+
+## Run 8: parse_duration smoke test (2026-10-28)
+
+Lead (sonnet). Scratch folder, no real project. Measured subagent tokens, models from the agent files (worker haiku, reviewer opus). Per-agent rows are in `cost.md` under "Agent team smoke test 8".
+
+| Unit | Tokens | Review rounds | Result |
+|---|---|---|---|
+| `parse_duration()` plus tests | 41,239 (worker 24,130; reviewer 17,109) | 1 | APPROVED round 1, 17 tests |
+
+Lead tokens and total wall time: not measured. Full notes are in `agent-team-smoke-tests.md` (test 8).
+
+Lessons:
+- **The ask-first rule works as written.** Two edge-case questions were asked before any worker started, and the small calls were listed as assumptions.
+- **The rework path is still untested.** Nothing was rejected, so the findings question, the 3-rejection cap and the 5-round cap have not run yet.

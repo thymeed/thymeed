@@ -1,6 +1,6 @@
 # Agent team log
 
-Log for the planner / worker / researcher / reviewer team in `~\.claude\agents\`. One entry per project. Token figures are measured `subagent_tokens` unless marked as an estimate. Raw per-agent numbers also go in `~\.claude\cost.md`.
+Log for the Lead / worker / researcher / reviewer team (agents in `~/.claude/agents/`; the Lead is the main chat). One entry per project. Token figures are measured `subagent_tokens` unless marked as an estimate. Raw per-agent numbers also go in `cost.md`.
 
 ## 2026-10-23: team smoke tests
 
@@ -55,4 +55,20 @@ Four tests of the new team, run in scratch folders. No real project code was tou
 
 **Running total, all six tests:** 412,947+ measured subagent tokens (lower bound).
 
-Smoke tests complete. Next entry is real project work.
+## Test 8: parse_duration() with the Lead setup and the new Lead.md rules (2026-10-28)
+
+Run in a scratch folder. No real project code was touched. Numbered 8 because Run 5 in `Orchestration_log.md` already counts as test 7 (the first run with the Lead setup).
+
+| Task | Units | Agents (models) | Rework rounds | Subagent tokens | Wall time | Result |
+|---|---|---|---|---|---|---|
+| `parse_duration("1h30m")` to seconds, plus unittest tests | 1 | Lead (sonnet, main chat), 1 worker (haiku), 1 reviewer (opus) | 0 | 41,239 measured (worker 24,130; reviewer 17,109) | worker about 52s; reviewer about 38s | Approved round 1. |
+
+**Findings**
+- The ask-first rule fired. Before dispatching, the Lead asked two questions a worker would otherwise guess: what bad input does, and which units and limits apply. Both answers were the recommended defaults.
+- Small calls were stated as assumptions before the worker started: units in order d, h, m, s with no repeats; lowercase and integers only; a bare number is invalid; surrounding whitespace is stripped.
+- The Lead re-checked the worker's report against the real files before sending it to the reviewer: it ran the suite (17 pass) and tried every invalid input itself.
+- The reviewer ran its own edge cases ("0s", "1h0m", trailing newline, Unicode digits, lookalike units) and its own mutation run. It approved with non-blocking notes: replacing `[0-9]` with `\d` survives the suite, and "0s", "1h0m" and a trailing newline have no tests. The Lead took no action on them.
+- Not exercised: `CHANGES_REQUESTED`, the "ask me which findings to fix" step, the 3-rejection cap and the 5-round cap. Nothing was rejected, so those rules are still unproven.
+- Lead tokens and total wall time: not measured. The worker's mutation script and a `revmut` copy are left in the scratch folder.
+
+**Running total, tests 1 to 6:** 412,947+ measured subagent tokens (lower bound), unchanged. Test 8 adds 41,239 measured.

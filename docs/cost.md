@@ -16,7 +16,6 @@ Finished so far: 761,272 subagent tokens.
 ## Notes
 
 - All subagents run on sonnet per `pstack-models.md`, in the lean setup (no swarm lanes).
-- Update this table as the pending rows report.
 
 ## FocusPet, 2026-10-22 (second batch): issue fixes
 
@@ -300,20 +299,35 @@ Squirrow run 2 totals (measured subagent_tokens): workers (haiku) 1,130,564; rev
 | #67 overlay drag-close, round 2 rework (saving test, reset test) | worker | haiku | 38,723 | report delivered; Lead verified 319 tests, build, format, src unchanged |
 | #67 overlay drag-close, round 2 | reviewer | opus | 24,419 | APPROVED (no blockers, no notes) |
 | #68 fence unwrap, round 1 | worker | haiku | 87,001 | report delivered; Lead verified 340 tests, build, format; 3 existing tests edited (spec-driven) |
-(#67 subtotal: workers 88,909; reviewers 52,535; total 141,444, merged as #69.)
 | #68 fence unwrap, round 1 | reviewer | opus | 47,114 | CHANGES_REQUESTED (plaintext not pinned; indent strip untested; both test gaps, code correct) |
 | #68 fence unwrap, round 2 rework (3 tests) | worker | haiku | 49,660 | report delivered; Lead verified 351 tests, build, format, src unchanged |
 | #68 fence unwrap, round 2 | reviewer | opus | 27,965 | APPROVED (non-blocking: backtick rule duplicated at two places, both now tested) |
-(#68 final: workers 136,661; reviewers 75,079; total 211,740, merged as #70.)
 | #71 join wrapped paragraph lines, round 1 | worker | haiku | not measured | STOPPED by the Lead mid-run at the owner's request (the owner saw it near 200k in their view, unverified; no usage figure was returned for the killed agent). Never reported; Lead verified the tree after stopping: one stale app test fixed inline, 380 tests, build, format |
 | #71 join wrapped paragraph lines, round 1 | reviewer | opus | 93,002 | CHANGES_REQUESTED (5 behaviors untested: closing marks after a sentence end, italic in label title, italic in fence title; code correct) |
 | #71 join wrapped paragraph lines, round 2 rework (5 tests, e.g./i.e., tidy-ups) | worker | haiku | 68,704 | report delivered; Lead verified 390 tests, build, format |
 | #71 join wrapped paragraph lines, round 2 | reviewer | opus | 36,491 | APPROVED (non-blocking: two doc-comment wordings, fixed inline by the Lead; no test for I.e. alone) |
-(#71 subtotal: workers 68,704 measured + one stopped worker not measured; reviewers 129,493; total measured 198,197, merged as #72.)
 | #63 CI check of the sw scan, round 1 | worker | haiku | not measured | STOPPED by the Lead at the owner's request ("stop here for now") before it reported; no usage figure was returned for the killed agent. Work left uncommitted on branch ci/check-sw-scan, unverified. |
 | #63 CI check of the sw scan, round 1 | reviewer | opus | 32,122 | CHANGES_REQUESTED (fake cache accepted URLs missing from dist; a real install would fail while the check stays green) |
 | #63 CI check of the sw scan, round 2 rework (missing-URL rejection, dist message) | worker | haiku | 35,882 | report delivered; Lead verified 397 tests, build, check:sw exit 0, format |
 | #63 CI check of the sw scan, round 2 | reviewer | opus | 27,614 | APPROVED (non-blocking: CLI block untested; percent-encoded names; first bad URL only) |
+
+(#67 subtotal: workers 88,909; reviewers 52,535; total 141,444, merged as #69.)
+
+(#68 final: workers 136,661; reviewers 75,079; total 211,740, merged as #70.)
+
+(#71 subtotal: workers 68,704 measured + one stopped worker not measured; reviewers 129,493; total measured 198,197, merged as #72.)
+
 (#63 final: workers 35,882 measured + one stopped worker not measured; reviewers 59,736; total measured 95,618, merged as #73.)
 
 Squirrow run 2 final totals (measured subagent_tokens): workers (haiku) 1,460,720; reviewers (opus) 810,487; total 2,271,207 across 40 reports, 38 measured. Five units 1,624,208 (#55 to #59); follow-ups 646,999 (#67 141,444; #68 211,740; #71 198,197; #63 95,618). Not measured: the two stopped workers (the first on #71 and the first on #63) and the Lead. Wall time not measured. Merged as #60, #61, #64, #65, #66, #69, #70, #72, #73.
+
+## Agent team smoke test 8, 2026-10-28: parse_duration with the Lead setup
+
+Figures are `subagent_tokens` as reported per agent. Lead tokens not measured.
+
+| Task | Role | Model | Tokens | Tool uses | Wall time | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| parse_duration, round 1 | Worker | haiku | 24,130 | 8 | 52s | report delivered; Lead verified 17 tests pass |
+| parse_duration, round 1 | Reviewer | opus | 17,109 | 5 | 38s | APPROVED (non-blocking: `\d` mutant survives; "0s", "1h0m", trailing newline untested) |
+
+Total: 41,239 measured subagent tokens.
