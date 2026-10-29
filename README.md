@@ -43,20 +43,32 @@ A local-first memory manager for your AI chats. It needs no account, and your da
 
 ![Squirrow](docs/og.png)
 
+### agent-loop · Python + LangGraph · local models
+A lead → worker → check → reviewer loop that runs fully on local Ollama models (gemma3:4b plans, qwen2.5-coder:7b writes and reviews). Model-written code runs in a locked-down Docker sandbox with no network and a read-only filesystem, and the reviewer can't approve a failing test run. After 3 rejections, a stronger model gets one attempt before it pauses and asks me. Runs are checkpointed to SQLite and can resume after a crash.
+
+It also has a research mode that answers from recent arXiv papers, with a check that every citation was actually fetched and every quote appears word for word in the abstract. **In progress:** project mode, which edits a real multi-file Python project and gates the result on its own pytest suite.
+
+*Private repo. Demo on request.*
+
 ---
 
 ## Research
 
 - **ssm-state-quantization**: how rounding the recurrent state of Mamba-2 (130M and 370M) hurts accuracy, broken down by how fast each head forgets. Every experiment is pre-registered in the log before it runs. *Private repo. Demo on request.*
+
   ![License MIT](https://img.shields.io/badge/license-MIT-green) ![Experiments, two small models](https://img.shields.io/badge/type-experiments-informational)
 - **[replication-criterion](https://github.com/thymeed/replication-criterion)**: a pre-registered feasibility analysis of machine self-replication.
+
   ![License CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey) ![Study, no experiment](https://img.shields.io/badge/type-study-informational)
 
 ---
 
 ## Stack
 
-Rust · TypeScript · JavaScript/Node · Python
-Tauri 2 · Electron · Win32 · React · Vite · GitHub Actions
+**Languages:** Rust · TypeScript · JavaScript/Node · Python
 
-AI tools: Claude Code · Cursor · Ollama · MCP · pytest
+**Frameworks:** Tauri 2 · Electron · Win32 · React · Vite · LangGraph
+
+**Data & infra:** SQLite · IndexedDB · Docker · GitHub Actions
+
+**AI tools:** Claude Code · Cursor · Ollama · MCP · pytest
