@@ -18,7 +18,7 @@ I build local-first apps and AI agent tooling. I direct a team of Claude Code ag
 - **FocusPet** · Tauri 2 + Rust: desktop companion with local LLM chat. A seeded eval took tool-call replies from 24/45 to 42/45. *Private.* [Case study](docs/runs/focuspet.md#run-5-focuspet-34-state-number-rule-2026-10-24)
 - **[autolab](https://github.com/thymeed/autolab)** · agents that plan, run and review small, pre-registered ML experiments. Round 1 is set up; no results yet.
 
-In progress (private): singularity (a local agent harness with a live 3D view), Cyberspace (a Godot civilization sim where every resident thinks through a local model), combinatorics-discovery (a verified search for small combinatorics results) and my personal site.
+In progress (private): singularity (a local agent harness with a live 3D view), Cyberspace (a Godot civilization sim where every resident thinks through a local model), and my personal site.
 
 ## Research
 
