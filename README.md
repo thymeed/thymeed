@@ -22,6 +22,8 @@ In progress (private): singularity (a local agent harness with a live 3D view), 
 
 ## Research
 
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24189910.svg)](https://doi.org/10.5281/zenodo.24189910) **Seventeen three-colour Rado numbers for ax + by = cz with three distinct coefficients** (preprint, 2026)
+Exact values of R₃ for 17 equations, certified by verified LRAT proofs from two independent SAT encodings.
 - [ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization): pre-registered experiments on rounding Mamba-2's recurrent state, and why the damage depends on how fast each head forgets.
 - [replication-criterion](https://github.com/thymeed/replication-criterion): a pre-registered feasibility analysis of machine self-replication.
 
