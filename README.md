@@ -12,7 +12,7 @@ I build local-first apps and AI agent tooling. I direct a team of Claude Code ag
 
 ## Projects
 
-- **[Squirrow](https://github.com/thymeed/Squirrow)** · React + TypeScript: local-first memory manager for AI chats. No account, and your data stays in your browser. [Live demo](https://squirrow.thymeed.workers.dev)
+- **[Squirrow](https://github.com/thymeed/Squirrow)** · React + TypeScript: local-first memory manager for AI chats. No account, and your data stays in your browser. [Live demo](https://squirrow.vercel.app/)
 - **[agent-workshop](https://github.com/thymeed/agent-workshop)** · Electron: desktop dashboard of how a multi-agent coding session routes work across models. [Download](https://github.com/thymeed/agent-workshop/releases/latest)
 - **[agent-loop](https://github.com/thymeed/agent-loop)** · Python + LangGraph: lead, worker and reviewer loop on local Ollama models. Model-written code runs in a locked-down Docker sandbox and cannot pass a failing test.
 - **FocusPet** · Tauri 2 + Rust: desktop companion with local LLM chat. Adding calculator and weather tools took a seeded eval from 24/45 to 42/45 passing replies. *Private.* [Case study](docs/runs/focuspet.md#tool-eval-calculator-and-weather-tools-2026-10-22)
