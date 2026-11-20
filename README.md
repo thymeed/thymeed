@@ -5,6 +5,7 @@ I build local-first apps and AI agent tooling. I direct a team of Claude Code ag
 ## Merged open-source work
 
 - [goose #12993](https://github.com/aaif-goose/goose/pull/12993): custom providers keep image support after a rename (vision is looked up by catalog ID)
+- [goose #13487](https://github.com/aaif-goose/goose/pull/13487): share catalog-aware vision lookup between SDK and provider registry
 - [repowise #4729](https://github.com/repowise-dev/repowise/pull/4729), [#4806](https://github.com/repowise-dev/repowise/pull/4806): Dapr pub/sub topic extraction for .NET, Java, JS/TS, Python and Go
 - [repowise #4350](https://github.com/repowise-dev/repowise/pull/4350): fixed a timeout test that flaked on slow runners
 - [cubrid-mcp-server #369](https://github.com/cubrid-lab/cubrid-mcp-server/pull/369), [#374](https://github.com/cubrid-lab/cubrid-mcp-server/pull/374): config tests for boolean aliases and connection inheritance
