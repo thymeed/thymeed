@@ -23,7 +23,7 @@ In progress (private): singularity (a local agent harness with a live 3D view), 
 
 ## Research
 
-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24189909.svg)](https://doi.org/10.5281/zenodo.24189909) **Seventeen three-colour Rado numbers for ax + by = cz with three distinct coefficients** (preprint, 2026): exact values of R₃ for 17 equations. Upper bounds are certified by cake_lpr-verified LRAT proofs from two independent SAT encodings; lower bounds by explicit colourings.
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24189909.svg)](https://doi.org/10.5281/zenodo.24189909) **Three-colour Rado numbers for ax + by = cz with three distinct coefficients** (preprint, v3.1, 2026): exact values of R₃ for 73 equations, each upper bound backed by LRAT proofs from two independently written SAT encodings and accepted by the formally verified checker cake_lpr. Also certifies R₃(11x + 7y = 8z) = 464 by a 243-cube split (one encoding; 244 of 244 proofs re-checked).
 - [ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization): pre-registered experiments on rounding Mamba-2's recurrent state, and why the damage depends on how fast each head forgets.
 - [replication-criterion](https://github.com/thymeed/replication-criterion): a pre-registered feasibility analysis of machine self-replication.
 
