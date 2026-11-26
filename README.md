@@ -1,34 +1,25 @@
 # Thymeed
 
-I build local-first apps and AI agent tooling. I direct a team of Claude Code agents (a Sonnet lead, an Opus planner, Haiku and Sonnet workers, an Opus reviewer) and decide what ships. Nothing merges until the checks pass and I've tested it by hand.
-
-## Merged open-source work
-
-- [goose #12993](https://github.com/aaif-goose/goose/pull/12993): custom providers keep image support after a rename (vision is looked up by catalog ID)
-- [goose #13487](https://github.com/aaif-goose/goose/pull/13487): share catalog-aware vision lookup between SDK and provider registry
-- [repowise #4729](https://github.com/repowise-dev/repowise/pull/4729), [#4806](https://github.com/repowise-dev/repowise/pull/4806): Dapr pub/sub topic extraction for .NET, Java, JS/TS, Python and Go
-- [repowise #4350](https://github.com/repowise-dev/repowise/pull/4350): fixed a timeout test that flaked on slow runners
-- [cubrid-mcp-server #369](https://github.com/cubrid-lab/cubrid-mcp-server/pull/369), [#374](https://github.com/cubrid-lab/cubrid-mcp-server/pull/374): config tests for boolean aliases and connection inheritance
-- [octofs #16](https://github.com/Muvon/octofs/pull/16): first unit tests for `request_ctx`, my first merged Rust PR
+I build local-first apps, AI agent tooling and small, pre-registered research projects. I build with AI coding agents under a review-and-test loop I control.
 
 ## Projects
 
-- **[Squirrow](https://github.com/thymeed/Squirrow)** · React + TypeScript: local-first memory manager for AI chats. No account, and your data stays in your browser. [Live demo](https://squirrow.vercel.app/)
-- **[agent-workshop](https://github.com/thymeed/agent-workshop)** · Electron: desktop dashboard of how a multi-agent coding session routes work across models. [Download](https://github.com/thymeed/agent-workshop/releases/latest)
-- **[agent-loop](https://github.com/thymeed/agent-loop)** · Python + LangGraph: lead, worker and reviewer loop on local Ollama models. Model-written code runs in a locked-down Docker sandbox and cannot pass a failing test.
-- **FocusPet** · Tauri 2 + Rust: desktop companion with local LLM chat. Adding calculator and weather tools took a seeded eval from 24/45 to 42/45 passing replies. *Private.* [Case study](docs/runs/focuspet.md#tool-eval-calculator-and-weather-tools-2026-10-22)
-- **[autolab](https://github.com/thymeed/autolab)** · agents that plan, run and review small, pre-registered ML experiments. Round 1 is set up; no results yet.
-
-In progress (private): singularity (a local agent harness with a live 3D view), Cyberspace (a Godot civilization sim where every resident thinks through a local model), and my personal site.
+- **[agent-workshop](https://github.com/thymeed/agent-workshop)** · Electron: a desktop dashboard that shows how a multi-agent coding session routes work across models. [Download](https://github.com/thymeed/agent-workshop/releases/latest)
+- **[agent-loop](https://github.com/thymeed/agent-loop)** · Python + LangGraph: a lead, worker and reviewer loop on local Ollama models. Model-written code runs in a locked-down Docker sandbox and cannot pass a failing test.
+- **[Squirrow](https://github.com/thymeed/Squirrow)** · React + TypeScript: a local-first memory manager for AI chats. No account needed, and your data stays in your browser. [Live demo](https://squirrow.vercel.app/)
+- **[autolab](https://github.com/thymeed/autolab)**: agents that plan, run and review small, pre-registered ML experiments.
 
 ## Research
 
-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24189909.svg)](https://doi.org/10.5281/zenodo.24189909) **Three-colour Rado numbers for ax + by = cz with three distinct coefficients** (preprint, v3.1, 2026): exact values of R₃ for 73 equations, each upper bound backed by LRAT proofs from two independently written SAT encodings and accepted by the formally verified checker cake_lpr. Also certifies R₃(11x + 7y = 8z) = 464 by a 243-cube split (one encoding; 244 of 244 proofs re-checked).
-- [ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization): pre-registered experiments on rounding Mamba-2's recurrent state, and why the damage depends on how fast each head forgets.
-- [replication-criterion](https://github.com/thymeed/replication-criterion): a pre-registered feasibility analysis of machine self-replication.
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24189909.svg)](https://doi.org/10.5281/zenodo.24189909) **Three-colour Rado numbers for ax + by = cz with three distinct coefficients** (preprint, v3.1, 2026): exact values of R₃ for 73 equations, with upper bounds backed by LRAT proofs from two independent SAT encodings and checked by the formally verified checker cake_lpr.
+- **[ssm-state-quantization](https://github.com/thymeed/ssm-state-quantization)**: pre-registered experiments on rounding Mamba-2's recurrent state.
+- **[replication-criterion](https://github.com/thymeed/replication-criterion)**: a pre-registered feasibility analysis of machine self-replication.
 
-## How I work
+## Merged open-source work
 
-Every run is logged with its review rounds and measured tokens: [Orchestration log](docs/Orchestration_log.md) · [Agent files](agents/)
+- [goose #12993](https://github.com/aaif-goose/goose/pull/12993), [#13487](https://github.com/aaif-goose/goose/pull/13487): custom providers keep image support after a rename, with one vision lookup shared by the SDK and provider registry
+- [repowise #4729](https://github.com/repowise-dev/repowise/pull/4729), [#4806](https://github.com/repowise-dev/repowise/pull/4806), [#4350](https://github.com/repowise-dev/repowise/pull/4350): Dapr pub/sub topic extraction across five languages, plus a flaky-test fix
+- [cubrid-mcp-server #369](https://github.com/cubrid-lab/cubrid-mcp-server/pull/369), [#374](https://github.com/cubrid-lab/cubrid-mcp-server/pull/374): config tests
+- [octofs #16](https://github.com/Muvon/octofs/pull/16): first unit tests for `request_ctx` (Rust)
 
-Rust · TypeScript · Python · Tauri · Electron · React · LangGraph · Docker · Claude Code · Ollama
+Rust · TypeScript · Python · Tauri · Electron · React · LangGraph · Docker · Ollama
